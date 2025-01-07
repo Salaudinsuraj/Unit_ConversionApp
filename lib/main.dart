@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/first_screen.dart';
+import 'src/views/first_screen.dart';
 
 void main() {
   runApp(KgToLbsConverter());
