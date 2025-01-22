@@ -1,16 +1,16 @@
 # unit_conversion
 
-A new Flutter project.
+Layered Architecture
 
-## Getting Started
+lib/
+├── common/            # Shared resources like themes, styles, utilities
+├── src/
+│   ├── models/        # Data models
+│   ├── services/      # APIs, database, and network services
+│   ├── repositories/  # Abstraction for data handling
+│   ├── views/         # UI components and screens
+│   ├── viewmodels/    # Business logic (e.g., MVVM, Provider, BLoC)
+│   ├── widgets/       # Reusable UI widgets
+│   ├── routes/        # App navigation (e.g., AutoRoute)
+└── main.dart          # App entry point
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
