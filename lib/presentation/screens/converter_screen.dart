@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import '../../domain/usecases/convert_kg_to_lbs.dart';
 
 class ConverterScreen extends StatefulWidget {
+  const ConverterScreen({Key? key}) : super(key: key);
+
   @override
-  _ConverterScreenState createState() => _ConverterScreenState();
+  State<ConverterScreen> createState() => _ConverterScreenState();
 }
 
 class _ConverterScreenState extends State<ConverterScreen> {
   final TextEditingController _controller = TextEditingController();
   double? _result;
+  final ConvertKgToLbs _convertKgToLbs = ConvertKgToLbs();
 
   void _convert() {
     final double? kilograms = double.tryParse(_controller.text);
     if (kilograms != null) {
       setState(() {
-        _result = kilograms * 2.20462;
+        _result = _convertKgToLbs.execute(kilograms);
       });
     } else {
       setState(() {
@@ -21,7 +25,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content:  Text('Please enter a valid number!'),
+          content: Text('Please enter a valid number!'),
         ),
       );
     }
